@@ -1,0 +1,182 @@
+servers are one of the worst things that ever happened to software developers
+
+
+finish code, users who want to try out
+everyone will be happy
+set it up, install os, patches, middleware, security, how much infrastrucgture i need, worry about scaling, replication, spending all of your time
+
+we end up being held hostage by our infrastructure.
+
+as a developer just want a nice way to run my code
+
+don't want to be an infrastructure engineer
+
+wasn't cloud supposed to fix this?
+
+the cloud turned out to be in the early days - virtual systems in somebody else's
+
+not really utility model.
+
+new house, ring up power company, we will ring around all parts to assemble sub station in your backyard. you have ot maintain.
+
+not just time, but money.
+
+google july 2013 utilization rates on bigger
+20 to 40 percent.
+
+if you are renting vms by the hour - getting no
+
+what can we do?
+
+long time stuck in slightly impossible situation
+
+end of 2014, amazon launched aws lambda - next generation cloudl computing service. - like a utilitty.
+
+was different for a cuple reasons
+shrank
+deploy those functions as microserves that could be executed on events, like http request
+
+what happens if second request in parallel?
+platform spins up second instance of service in parallel
+dont' have to think abot scaling.
+lamba systems also scale down. if you're not doing any work, don't hae any instances of your code running.
+
+pay as you go. only when processing requests.
+
+that's really important when you think about cloud bill.
+
+business insider: one happy lamba customer saving 80 per on their cloud bills.
+
+grew in popularity
+
+in 2016, something else interesting happened.
+
+new approach - all of big providers got on board
+ibm, google, azure, webtask.io
+
+now serverless is not just aws, but other providers.
+
+how to use
+-----------
+
+weather
+
+british people we are obsessed with the weather
+
+trend this year - bots
+
+my idea could i build some kind of weather bot
+one of my fav tools is slack.
+
+great platform for building bots
+
+ask for weather, get forecast for different commands
+
+ibm openwhisk - should be called apache openwhisk
+
+free tier
+
+the techniques and tools really applicable to every cloud provider
+patterns are the same.
+
+if you are evalu
+
+open source - openwhisk on github
+
+deploy to any infrastruture provider
+
+donated to apache so its apache open whisk going fward.
+
+builds on kafka, docker
+
+run time support - restricted to what they provide
+
+my_service.js
+
+entry point: this is the entire interface
+global function
+function main(params) {
+  // put your code here!
+
+  return {...};
+}
+
+returns object or promise
+
+openwhisk creates an action - dormant microservice waiting to be executed on demand
+
+dashboard,
+in browser developer
+
+can do locally then push
+
+cli interface - binary install
+
+wsk utility
+
+what serives already deployed.
+
+hello world example.
+
+
+wsk actino create hello_name
+
+could call 1,000 times in parell
+
+can store paramters
+
+openwhisk already has system for talking to slack
+
+sequences - give it some functinos, platform will invoke as actino witout writing any code
+
+has platform api
+
+sending rest api request
+
+need to use your developer credentials so most people use api gateway
+
+proxy public apis with private api in background
+
+
+triggers: create entities that listen to exents fro eternal resources like databases
+
+can bind multip functin sto
+
+challenges and tradeoffs
+
+comes with constraints
+compute limits - opiniated about what kinds of apps will run
+for modern apps for modern cloud env.
+
+limiting computing resources. functions have to be stateless. cant' store variabled atabase between invocation.
+
+memory - can allocate up xx gigs.
+
+need terabytes, can't use serverless.
+
+timeout - max 5 minutes.
+
+monitor, debugging, testing.
+lot of tools and techniques, ssh, debugger,
+
+no access to env code runs on ini first place
+
+still have accss to standard error, standard out -- turn on with debug flag.
+
+can't drop in a debugger or grep through logs
+
+easy to unit test - defined entry point. how do you
+
+complexity - downsides how to roll otu new versions, roll back,
+look at using pop open sourde frameworkd, biggest is the Serverless Framework
+
+servers are killing hyour productivity
+
+bit.ly/burn_your_servers
+Login: http://devchat.tv/login
+https://devchat.tv/conference-talks/microservices-without-servers
+https://github.com/jthomas/microservices_without_servers/tree/master/code/hello_world
+
+
+
+
